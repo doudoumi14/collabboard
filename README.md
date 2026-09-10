@@ -48,9 +48,20 @@ The app runs on `http://localhost:5173` and proxies `/api` and `/socket.io` to t
 
 ### Tests
 
+Unit tests for the board store:
+
 ```bash
 cd server
 npm test
+```
+
+End-to-end browser tests (Playwright). These drive **two independent browser
+contexts** to prove the real-time sync actually works between separate clients:
+
+```bash
+npm install
+npx playwright install chromium
+npm run test:e2e
 ```
 
 ## Project structure
