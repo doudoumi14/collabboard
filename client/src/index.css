@@ -1,0 +1,260 @@
+:root {
+  --bg: #0f1115;
+  --surface: #171a21;
+  --surface-alt: #1f232c;
+  --border: #2a2f3a;
+  --text: #e8eaed;
+  --text-muted: #9aa1ac;
+  --accent: #5b8cff;
+  --accent-hover: #4677f0;
+  --danger: #e5605a;
+  color-scheme: dark;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+code {
+  background: var(--surface-alt);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.navbar {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Home page */
+
+.home {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.home h1 {
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  text-align: left;
+}
+
+.home-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.home-card h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.home-card input {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.55rem 0.7rem;
+  color: var(--text);
+}
+
+.home-card button {
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  padding: 0.55rem 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.home-card button:hover {
+  background: var(--accent-hover);
+}
+
+.home-card button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Board page */
+
+.board-page {
+  padding: 1.5rem;
+  max-width: 100%;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.board-header h1 {
+  margin: 0 0 0.25rem;
+}
+
+.board-id {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.add-column-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.add-column-form input,
+.add-card-form input {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.add-column-form button {
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.add-column-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.columns {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.column {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem;
+  min-width: 260px;
+  max-width: 260px;
+  flex-shrink: 0;
+}
+
+.column h2 {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card-count {
+  background: var(--surface-alt);
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 8px;
+}
+
+.card {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: grab;
+  font-size: 0.9rem;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card-delete {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.card-delete:hover {
+  color: var(--danger);
+}
+
+.add-card-form {
+  margin-top: 0.6rem;
+}
+
+.add-card-form input {
+  width: 100%;
+}
