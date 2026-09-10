@@ -25,6 +25,17 @@ app.get("/api/boards/:id", (req, res) => {
   res.json(board);
 });
 
+app.use((_req, res) => {
+  res.status(404).json({ error: "Not found" });
+});
+
+// Express only treats a 4-arg function as an error handler, so `next` must stay
+// in the signature even though it isn't called.
+app.use((err: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+  console.error(err);
+  res.status(500).json({ error: "Internal server error" });
+});
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, { cors: { origin: "*" } });
 
