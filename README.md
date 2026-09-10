@@ -1,6 +1,10 @@
 # CollabBoard
 
+[![CI](https://github.com/doudoumi14/collabboard/actions/workflows/ci.yml/badge.svg)](https://github.com/doudoumi14/collabboard/actions/workflows/ci.yml)
+
 A real-time collaborative kanban board. Open the same board in two browser tabs and changes sync instantly over WebSockets — no page refresh, no polling.
+
+![CollabBoard board view](docs/screenshot.png)
 
 ## Stack
 
